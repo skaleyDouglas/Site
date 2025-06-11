@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do Caos ao Controle: Domine Seu Dinheiro em 30 Dias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #D4AF37;
+            --accent: #FFD700;
+            --dark: #111111;
+            --light: #1a1a1a;
+            --success: #4CAF50;
+            --text: #ffffff;
+            --light-text: #cccccc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #000, #111);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--secondary);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span:first-child {
+            color: var(--accent);
+        }
+        
+        .logo span:last-child {
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            background: url('https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.85) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            color: white;
+        }
+        
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero-text h1 span {
+            color: var(--accent);
+            display: block;
+        }
+        
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .product-box {
+            flex: 1;
+            min-width: 300px;
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .product {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(-15deg) rotateX(10deg);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            transition: transform 0.8s ease;
+            border: 3px solid var(--secondary);
+        }
+        
+        .product:hover {
+            transform: rotateY(-5deg) rotateX(5deg);
+        }
+        
+        .product-cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            backface-visibility: hidden;
+        }
+        
+        .product-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: var(--dark);
+        }
+        
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .problem-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .problem-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--light-text);
+        }
+        
+        .problem-list {
+            list-style: none;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 1px solid var(--secondary);
+        }
+        
+        .problem-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .problem-list li::before {
+            content: "✗";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            min-width: 25px;
+        }
+        
+        /* Benefits Section */
+        .section {
+            padding: 80px 0;
+            background: var(--dark);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .benefit-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #333;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+            border-color: var(--secondary);
+        }
+        
+        .benefit-icon {
+            background: linear-gradient(135deg, #000, #222);
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--accent);
+            border-bottom: 1px solid var(--secondary);
+        }
+        
+        .benefit-content {
+            padding: 30px;
+        }
+        
+        .benefit-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        /* Transformation Section */
+        .transformation {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #000, #111);
+        }
+        
+        .transformation-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            border: 1px solid var(--secondary);
+        }
+        
+        .transformation-header {
+            background: linear-gradient(135deg, #000, #222);
+            color: var(--accent);
+            text-align: center;
+            padding: 40px;
+            border-bottom: 1px solid var(--secondary);
+        }
+        
+        .transformation-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+        }
+        
+        .column.before {
+            background: #111;
+        }
+        
+        .column.after {
+            background: #111;
+        }
+        
+        .column h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: var(--accent);
+            position: relative;
+        }
+        
+        .column h3::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .column.after h3::after {
+            background: var(--success);
+        }
+        
+        .transformation-list {
+            list-style: none;
+        }
+        
+        .transformation-list li {
+            padding: 15px 0;
+            border-bottom: 1px dashed #333;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .transformation-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            line-height: 1;
+        }
+        
+        .column.after .transformation-list li::before {
+            color: var(--success);
+        }
+        
+        /* Author Section */
+        .author {
+            padding: 80px 0;
+            background: var(--dark);
+        }
+        
+        .author-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .author-photo {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .author-photo img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        
+        .author-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .author-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .author-info h3 {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        /* Offer Section */
+        .offer {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #000, #111);
+            text-align: center;
+        }
+        
+        .offer-container {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--secondary);
+        }
+        
+        .offer-container::before {
+            content: "OFERTA ESPECIAL";
+            position: absolute;
+            top: 20px;
+            right: -60px;
+            background: var(--secondary);
+            color: #000;
+            font-weight: bold;
+            padding: 10px 70px;
+            transform: rotate(45deg);
+            font-size: 16px;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .price-box {
+            display: inline-block;
+            margin: 30px 0;
+        }
+        
+        .old-price {
+            font-size: 1.8rem;
+            color: var(--light-text);
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+        
+        .new-price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .new-price small {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .installments {
+            font-size: 1.3rem;
+            color: var(--light-text);
+            margin-bottom: 30px;
+        }
+        
+        .bonuses {
+            background: #111;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: left;
+            max-width: 700px;
+            margin: 40px auto;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .bonuses h3 {
+            text-align: center;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .bonus-list {
+            list-style: none;
+        }
+        
+        .bonus-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .bonus-list li::before {
+            content: "🎁";
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--accent), var(--secondary));
+            color: #000;
+            text-align: center;
+            padding: 22px 50px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.7);
+        }
+        
+        .cta-button:active {
+            transform: translateY(0);
+        }
+        
+        .cta-button::after {
+            content: "→";
+            margin-left: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .cta-button:hover::after {
+            transform: translateX(5px);
+        }
+        
+        .guarantee {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            max-width: 700px;
+            margin: 40px auto;
+            border: 2px dashed var(--secondary);
+            position: relative;
+        }
+        
+        .guarantee i {
+            font-size: 48px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .guarantee h3 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .scarcity {
+            background: #111;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 30px auto;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .scarcity h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .timer {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .timer-unit {
+            background: var(--secondary);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 8px;
+            min-width: 70px;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            border: 1px solid #333;
+        }
+        
+        .testimonial::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            color: var(--accent);
+            opacity: 0.1;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-content p {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: bold;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-style: normal;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: linear-gradient(135deg, #000, #111);
+            color: white;
+            padding: 80px 0;
+            border-top: 1px solid var(--secondary);
+        }
+        
+        .faq .section-title h2 {
+            color: var(--accent);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            color: var(--accent);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+            border-top: 1px solid var(--secondary);
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: inline-block;
+            color: var(--accent);
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .new-price {
+                font-size: 3rem;
+            }
+            
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <span>Do</span><span>Caos ao Controle</span>
+            </div>
+            <div class="cta-button">
+                <a href="https://pay.kiwify.com.br/x6SVRkp" style="color: #000; text-decoration: none;">Comprar Agora</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>A Revolução Financeira que vai <span>Transformar sua Vida</span></h1>
+                <p>Imagine acordar todos os dias com a certeza de que seu dinheiro está trabalhando para você, e não o contrário. O método que já libertou mais de 5.000 pessoas do endividamento está ao seu alcance.</p>
+                <ul style="margin-left: 20px; margin-bottom: 30px;">
+                    <li>Domine suas finanças em apenas 30 dias</li>
+                    <li>Elimine dívidas sem sofrimento com a "Estratégia da Avalanche"</li>
+                    <li>Crie riqueza mesmo começando do zero</li>
+                    <li>Descubra como economizar 30% da sua renda no piloto automático</li>
+                </ul>
+                <a href="https://pay.kiwify.com.br/x6SVRkp" class="cta-button">QUERO MINHA LIBERDADE FINANCEIRA</a>
+            </div>
+            <div class="product-box">
+                <div class="product">
+                    <div class="product-cover">
+                        <!-- APENAS A IMAGEM SEM TEXTO -->
+                        <img src="https://i.ibb.co/mrJLDXYf/IMG-20240611-120217-1.jpg" alt="Capa do Produto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-content">
+                <h2>O Pesadelo Financeiro Que Você Pode Vencer</h2>
+                <p>Se você se identifica com pelo menos uma dessas situações, este guia é a solução que você precisa:</p>
+                
+                <ul class="problem-list">
+                    <li>Contas se acumulando e a sensação de que seu dinheiro desaparece antes do fim do mês</li>
+                    <li>Dívidas que parecem uma bola de neve, crescendo cada vez mais</li>
+                    <li>Noites em claro preocupado com o futuro financeiro da sua família</li>
+                    <li>A sensação de estar preso num emprego que não gosta por necessidade</li>
+                    <li>Sonhos adiados indefinidamente por falta de recursos</li>
+                    <li>O medo constante de imprevistos que podem destruir suas finanças</li>
+                </ul>
+                
+                <p style="margin-top: 30px; font-weight: 600; font-size: 1.3rem; color: var(--accent);">Se você respondeu "sim" a pelo menos uma dessas questões, este guia foi feito exatamente para você!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Que Você Vai Conquistar</h2>
+                <p>Este guia transformador vai equipar você com as ferramentas e mentalidade necessárias para dominar suas finanças de uma vez por todas</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Eliminação de Dívidas</h3>
+                        <p>Método comprovado para liquidar suas dívidas 3x mais rápido usando a estratégia da avalanche financeira, priorizando as dívidas mais caras primeiro.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Economia Automática</h3>
+                        <p>Sistema de "piloto automático" que faz você economizar até 30% da sua renda sem esforço consciente através da automação bancária inteligente.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Mentalidade Milionária</h3>
+                        <p>Reprograme seu mindset para tomar decisões financeiras inteligentes, evitando armadilhas emocionais que sabotam sua riqueza.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Investimentos Inteligentes</h3>
+                        <p>Aprenda a fazer seu dinheiro trabalhar para você com estratégias de investimento para iniciantes, mesmo começando com pequenos valores.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Controle Total</h3>
+                        <p>Planilhas exclusivas e sistema de acompanhamento que dão controle absoluto sobre cada centavo, mostrando exatamente para onde seu dinheiro está indo.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Proteção Financeira</h3>
+                        <p>Crie uma reserva de emergência à prova de crises e proteja seu patrimônio contra imprevistos e instabilidades econômicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Section -->
+    <section class="transformation">
+        <div class="container">
+            <div class="transformation-container">
+                <div class="transformation-header">
+                    <h2>Antes e Depois da Transformação</h2>
+                    <p>Veja como sua vida financeira pode mudar radicalmente</p>
+                </div>
+                <div class="columns">
+                    <div class="column before">
+                        <h3>Antes do Método</h3>
+                        <ul class="transformation-list">
+                            <li>Estresse constante com contas e dívidas</li>
+                            <li>Salário desaparecendo antes do fim do mês</li>
+                            <li>Sem perspectiva de poupar ou investir</li>
+                            <li>Dependência total do próximo pagamento</li>
+                            <li>Medo de imprevistos e emergências</li>
+                            <li>Sonhos financeiros sempre adiados</li>
+                            <li>Relacionamento tenso por causa de dinheiro</li>
+                            <li>Sensação de estar preso num ciclo sem fim</li>
+                        </ul>
+                    </div>
+                    <div class="column after">
+                        <h3>Depois do Método</h3>
+                        <ul class="transformation-list">
+                            <li>Controle total sobre suas finanças</li>
+                            <li>Dinheiro sobrando no final do mês</li>
+                            <li>Reserva de emergência formada</li>
+                            <li>Dívidas eliminadas ou sob controle</li>
+                            <li>Investimentos gerando renda passiva</li>
+                            <li>Sonhos se tornando realidade</li>
+                            <li>Paz e tranquilidade financeira</li>
+                            <li>Liberdade para fazer escolhas de vida</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer">
+        <div class="container">
+            <div class="offer-container">
+                <div class="section-title">
+                    <h2>Sua Transformação Financeira Começa Hoje</h2>
+                    <p>Invista em você mesmo e colha os frutos por toda a vida</p>
+                </div>
+                
+                <div class="price-box">
+                    <div class="old-price">De R$ 197,90</div>
+                    <div class="new-price"><small>R$</small>49,90</div>
+                    <div class="installments">ou 5x de R$ 9,98 sem juros</div>
+                </div>
+                
+                <div class="scarcity">
+                    <h3>ÚLTIMAS HORAS DE DESCONTO!</h3>
+                    <p>Esta oferta especial termina em:</p>
+                    <div class="timer">
+                        <div class="timer-unit">23 <span>HORAS</span></div>
+                        <div class="timer-unit">59 <span>MIN</span></div>
+                        <div class="timer-unit">59 <span>SEG</span></div>
+                    </div>
+                    <p>Aproveite o preço promocional antes que termine!</p>
+                </div>
+                
+                <a href="https://pay.kiwify.com.br/x6SVRkp" class="cta-button">QUERO MEU GUIA AGORA</a>
+                
+                <div class="bonuses">
+                    <h3>Bônus Exclusivos (Grátis por Tempo Limitado)</h3>
+                    <ul class="bonus-list">
+                        <li><strong>Bônus 1:</strong> Planilha Inteligente de Controle Financeiro (valor: R$ 97) - Controle automático de receitas, despesas e investimentos</li>
+                        <li><strong>Bônus 2:</strong> Guia Rápido de Investimentos para Iniciantes (valor: R$ 67) - Descubra como começar a investir com pouco dinheiro</li>
+                        <li><strong>Bônus 3:</strong> Acesso à Comunidade Exclusiva (valor: R$ 147/ano) - Suporte e networking com outros alunos</li>
+                        <li><strong>Bônus 4:</strong> Workshop Online "Mentalidade Milionária" (valor: R$ 127) - Reprograme sua mente para o sucesso financeiro</li>
+                    </ul>
+                </div>
+                
+                <div class="guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Garantia de Satisfação 100%</h3>
+                    <p>Se em 7 dias você aplicar o método e não ver resultados concretos na sua organização financeira, devolvemos cada centavo do seu investimento. Sem perguntas, sem burocracia.</p>
+                </div>
+                
+                <div class="section-title">
+                    <h2>O Que Nossos Alunos Estão Dizendo</h2>
+                    <p>Veja resultados reais de quem já aplicou o método</p>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Em apenas 3 meses seguindo o método, eliminei R$ 15.000 em dívidas e comecei a investir. Hoje tenho uma reserva de emergência e estou construindo meu patrimônio!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">CM</div>
+                                <div class="author-info">
+                                    <h4>Carla Mendes</h4>
+                                    <p>Analista Financeira, São Paulo</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Sempre fui desorganizado com dinheiro, mas o passo a passo tão claro me fez entender que finanças podem ser simples. Economizei R$ 1.200 no primeiro mês!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">RA</div>
+                                <div class="author-info">
+                                    <h4>Ricardo Almeida</h4>
+                                    <p>Designer, Rio de Janeiro</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Como mãe solo, achava impossível me organizar. Com as planilhas e estratégias do guia, consegui sair do cheque especial e agora estou investindo para o futuro do meu filho."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">FC</div>
+                                <div class="author-info">
+                                    <h4>Fernanda Costa</h4>
+                                    <p>Enfermeira, Belo Horizonte</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://pay.kiwify.com.br/x6SVRkp" class="cta-button">QUERO MINHA TRANSFORMAÇÃO FINANCEIRA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Perguntas Frequentes</h2>
+                <p>Tudo o que você precisa saber antes de adquirir seu guia</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Preciso ter conhecimento prévio em finanças?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutamente não! O guia foi desenvolvido para iniciantes e explica cada conceito de forma simples e prática. Você vai aprender tudo do zero, com linguagem acessível e exemplos do dia a dia.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quanto tempo leva para ver resultados?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Os primeiros resultados aparecem já nas primeiras semanas. A maioria dos nossos leitores relatam redução de dívidas em 30 dias e começam a acumular economias significativas em 60-90 dias.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>O material é atualizado?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Você recebe atualizações vitalícias sem custo adicional. O mercado financeiro muda e nós mantemos você sempre atualizado com as melhores estratégias.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Como recebo o acesso ao produto?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Imediatamente após a confirmação do pagamento, você recebe um e-mail com acesso à área de membros, onde pode baixar o PDF e todos os materiais complementares.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quais são as formas de pagamento?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceitamos cartões de crédito (em até 12x), Pix e boleto bancário. O pagamento é processado com segurança pela Kiwify, nossa plataforma de vendas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Do Caos ao Controle</div>
+                <p>Sua jornada para a liberdade financeira começa aqui</p>
+                
+                <div class="contact-info">
+                    <p>Entre em contato: <a href="mailto:ProgressoMilionario29@gmail.com">ProgressoMilionario29@gmail.com</a></p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Dúvidas</a>
+                </div>
+                
+                <a href="https://pay.kiwify.com.br/x6SVRkp" class="cta-button">GARANTIR MINHA CÓPIA AGORA</a>
+                
+                <div class="copyright">
+                    <p>© 2023 Do Caos ao Controle. Todos os direitos reservados.</p>
+                    <p>Este produto é comercializado com apoio da Kiwify</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+                
+                const icon = question.querySelector('i');
+                if (faqItem.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+
+        // Timer Countdown
+        function updateTimer() {
+            const timer = document.querySelector('.timer');
+            if (timer) {
+                // Esta é uma implementação de exemplo
+                // Em um cenário real, você implementaria uma contagem regressiva real
+                timer.innerHTML = `
+                    <div class="timer-unit">23 <span>HORAS</span></div>
+                    <div class="timer-unit">59 <span>MIN</span></div>
+                    <div class="timer-unit">59 <span>SEG</span></div>
+                `;
+            }
+        }
+        
+        // Inicializa o timer
+        updateTimer();
+    </script>
+</body>
+</html>
